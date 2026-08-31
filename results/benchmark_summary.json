@@ -1,0 +1,122 @@
+{
+  "all_benchmark_checks_passed": true,
+  "analytic_certificate_margins": {
+    "box_invariance": 0.108,
+    "eta": 0.012,
+    "eta_minus_disturbance": 0.002,
+    "input_authority": 0.007,
+    "uncertainty_interval_width_next_state": 0.004
+  },
+  "artifact_manifest_sha256": "fd867a91614f1913c578466059bfdb21872a613d7123188b10f8e97e21645ddd",
+  "benchmark_checks": [
+    {
+      "criterion": "robust projection satisfies all sampled closed-loop gates",
+      "id": "robust-projection-closed-loop",
+      "passed": true
+    },
+    {
+      "criterion": "corrupted raw or merely clipped neural output has an explicit box violation",
+      "id": "biased-policy-negative-control",
+      "passed": true
+    },
+    {
+      "criterion": "nominal projection fails at an uncertainty corner while robust projection does not",
+      "id": "uncertainty-negative-control",
+      "passed": true
+    },
+    {
+      "criterion": "finite-grid corner audit agrees with the analytic robust projection",
+      "id": "finite-grid-implementation-audit",
+      "passed": true
+    }
+  ],
+  "controllers": [
+    {
+      "box_safe_rate": 0.666666666667,
+      "completed_horizon_rate": 0.666666666667,
+      "controller_id": "raw_nn",
+      "input_bounds_rate": 0.555555555556,
+      "max_box_violation": 0.072507178929,
+      "max_contraction_violation": 0.306687059592,
+      "max_input_violation": 3.912196459657,
+      "mean_intervention_rate": 0.0,
+      "mean_quadratic_cost": 8.879697879444,
+      "practical_contraction_rate": 0.0,
+      "runs": 18,
+      "target_tube_rate": 0.333333333333
+    },
+    {
+      "box_safe_rate": 0.666666666667,
+      "completed_horizon_rate": 0.666666666667,
+      "controller_id": "input_clipped_nn",
+      "input_bounds_rate": 1.0,
+      "max_box_violation": 0.072246745607,
+      "max_contraction_violation": 0.28826231298,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.13024691358,
+      "mean_quadratic_cost": 9.308696853648,
+      "practical_contraction_rate": 0.0,
+      "runs": 18,
+      "target_tube_rate": 0.333333333333
+    },
+    {
+      "box_safe_rate": 1.0,
+      "completed_horizon_rate": 1.0,
+      "controller_id": "nominal_only_projection",
+      "input_bounds_rate": 1.0,
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0145,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.761111111111,
+      "mean_quadratic_cost": 8.948767578362,
+      "practical_contraction_rate": 0.333333333333,
+      "runs": 18,
+      "target_tube_rate": 0.333333333333
+    },
+    {
+      "box_safe_rate": 1.0,
+      "completed_horizon_rate": 1.0,
+      "controller_id": "robust_projection",
+      "input_bounds_rate": 1.0,
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.784722222222,
+      "mean_quadratic_cost": 8.256909249243,
+      "practical_contraction_rate": 1.0,
+      "runs": 18,
+      "target_tube_rate": 0.5
+    },
+    {
+      "box_safe_rate": 1.0,
+      "completed_horizon_rate": 1.0,
+      "controller_id": "linear_stable_baseline",
+      "input_bounds_rate": 1.0,
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.004166666667,
+      "mean_quadratic_cost": 7.610247897333,
+      "practical_contraction_rate": 1.0,
+      "runs": 18,
+      "target_tube_rate": 1.0
+    }
+  ],
+  "data_manifest_sha256": "9aec045fad82d1f52929290917496376daba0e3909255f7ec6d4b299a10a2e65",
+  "finite_grid_audit": {
+    "grid_points": 3001,
+    "interpretation": "Regression audit of the implementation at a finite grid; the analytic certificate, not this grid, supplies the guarantee.",
+    "max_box_violation": 0.0,
+    "max_contraction_violation": 0.0,
+    "minimum_admissible_interval_width": 0.04,
+    "nominal_actions_per_state": 3,
+    "passed": true,
+    "uncertainty_disturbance_corners_checked": 36012
+  },
+  "initial_states_per_scenario": 6,
+  "run_count": 90,
+  "scenario_count": 3,
+  "schema_version": "1.0",
+  "scope": "Scalar uncertain sampled-data benchmark; deterministic neural nominal policy; exact robust projection; no physical or MIMO claim.",
+  "training_rmse": 0.00015407429
+}

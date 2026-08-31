@@ -1,0 +1,17 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1753,
+      "path": "artifacts/certificate.json",
+      "sha256": "a48dccd61438e59d8b3dd73e5320454d2a28de530b0e4a8c185131e386caa6a8"
+    },
+    {
+      "bytes": 811,
+      "path": "artifacts/neural_policy.json",
+      "sha256": "cfce58ccb3a784fd44e569ea729f5fb422a7dd5183cbe182f90f13f1fc3936b0"
+    }
+  ],
+  "data_manifest_sha256": "9aec045fad82d1f52929290917496376daba0e3909255f7ec6d4b299a10a2e65",
+  "generated_by": "safecontrol.pipeline.reproduce",
+  "schema_version": "1.0"
+}

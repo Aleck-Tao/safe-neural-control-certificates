@@ -1,0 +1,54 @@
+{
+  "analytic_conditions": {
+    "all_conditions_pass": true,
+    "box_invariance_margin": 0.108,
+    "conditions": {
+      "box_forward_invariance": true,
+      "disturbance_absorption": true,
+      "input_authority": true,
+      "uncertainty_interval_width": true
+    },
+    "eta_minus_disturbance": 0.002,
+    "input_authority_margin": 0.007,
+    "uncertainty_interval_width_margin_input": 0.04,
+    "uncertainty_interval_width_margin_next_state": 0.004
+  },
+  "assumptions": [
+    "a is constant per rollout and lies in the declared interval",
+    "b is the declared positive scalar",
+    "the additive disturbance satisfies its bound at every step",
+    "the projection is evaluated without delay using finite arithmetic",
+    "the initial state lies in the declared safe box"
+  ],
+  "certificate_id": "SCALAR-ROBUST-PROJECTION-001",
+  "claim_scope": "For the declared scalar uncertain sampled-data model, bounded disturbance, safe box, and exact robust projection layer.",
+  "guarantee": {
+    "contraction_rate": 0.92,
+    "eta": 0.012,
+    "forward_invariant_set": [
+      -1.5,
+      1.5
+    ],
+    "one_step_bound": "abs(x_next) <= rho*abs(x) + eta",
+    "target_tube_radius": 0.15,
+    "ultimate_bound": "limsup abs(x_k) <= target_tube_radius"
+  },
+  "non_goals": [
+    "physical-system safety or actuator validation",
+    "multi-input or multi-state certification",
+    "certification of the neural policy without the projection layer",
+    "continuous-time, probabilistic, or distributional guarantees"
+  ],
+  "schema_version": "1.0",
+  "system": {
+    "a_interval": [
+      1.03,
+      1.05
+    ],
+    "b": 0.1,
+    "disturbance_bound": 0.01,
+    "equation": "x_next = a*x + b*u + w",
+    "input_radius": 2.0,
+    "safe_radius": 1.5
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "seed": 20260831,
+  "plant": {
+    "a_min": 1.03,
+    "a_max": 1.05,
+    "b": 0.1,
+    "disturbance_bound": 0.01,
+    "safe_lower": -1.5,
+    "safe_upper": 1.5,
+    "input_lower": -2.0,
+    "input_upper": 2.0
+  },
+  "certificate": {
+    "contraction_rate": 0.92,
+    "target_tube_radius": 0.15,
+    "numeric_tolerance": 1e-10
+  },
+  "training": {
+    "minimum_state": -0.8,
+    "maximum_state": 0.8,
+    "sample_count": 401,
+    "hidden_units": 9,
+    "ridge": 1e-8
+  },
+  "baselines": {
+    "linear_gain": 1.5
+  },
+  "evaluation": {
+    "steps": 80,
+    "initial_states": [-1.45, -1.0, -0.5, 0.5, 1.0, 1.45],
+    "grid_points": 3001,
+    "scenarios": [
+      {"name": "nominal", "plant_a": 1.04, "policy_bias": 0.0, "disturbance": "alternating"},
+      {"name": "uncertain_outward", "plant_a": 1.05, "policy_bias": 0.0, "disturbance": "outward"},
+      {"name": "policy_output_corruption", "plant_a": 1.05, "policy_bias": 3.0, "disturbance": "outward"}
+    ]
+  }
+}

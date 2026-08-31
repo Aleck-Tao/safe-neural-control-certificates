@@ -1,0 +1,110 @@
+[
+  {
+    "action": 0.01203198448,
+    "box_violation": 0.033703198448,
+    "contraction_violation": 0.187703198448,
+    "controller_id": "raw_nn",
+    "counterexample_id": "biased_neural_output_at_safe_boundary",
+    "input_violation": 0.0,
+    "next_state": 1.533703198448,
+    "nominal_action": 0.01203198448,
+    "required_next_abs": 1.346,
+    "state": 1.45
+  },
+  {
+    "action": 0.01203198448,
+    "box_violation": 0.033703198448,
+    "contraction_violation": 0.187703198448,
+    "controller_id": "input_clipped_nn",
+    "counterexample_id": "biased_neural_output_at_safe_boundary",
+    "input_violation": 0.0,
+    "next_state": 1.533703198448,
+    "nominal_action": 0.01203198448,
+    "required_next_abs": 1.346,
+    "state": 1.45
+  },
+  {
+    "action": -1.72,
+    "box_violation": 0.0,
+    "contraction_violation": 0.0145,
+    "controller_id": "nominal_only_projection",
+    "counterexample_id": "biased_neural_output_at_safe_boundary",
+    "input_violation": 0.0,
+    "next_state": 1.3605,
+    "nominal_action": 0.01203198448,
+    "required_next_abs": 1.346,
+    "state": 1.45
+  },
+  {
+    "action": -1.865,
+    "box_violation": 0.0,
+    "contraction_violation": 0.0,
+    "controller_id": "robust_projection",
+    "counterexample_id": "biased_neural_output_at_safe_boundary",
+    "input_violation": 0.0,
+    "next_state": 1.346,
+    "nominal_action": 0.01203198448,
+    "required_next_abs": 1.346,
+    "state": 1.45
+  },
+  {
+    "action": -2.0,
+    "box_violation": 0.0,
+    "contraction_violation": 0.0,
+    "controller_id": "linear_stable_baseline",
+    "counterexample_id": "biased_neural_output_at_safe_boundary",
+    "input_violation": 0.0,
+    "next_state": 1.3325,
+    "nominal_action": -2.175,
+    "required_next_abs": 1.346,
+    "state": 1.45
+  },
+  {
+    "action": -1.78,
+    "box_violation": 0.0,
+    "contraction_violation": 0.015,
+    "controller_id": "nominal_only_projection",
+    "counterexample_id": "nominal_model_mismatch_at_uncertainty_corner",
+    "input_violation": 0.0,
+    "next_state": 1.407,
+    "nominal_action": 1000000000.0,
+    "required_next_abs": 1.392,
+    "state": 1.5
+  },
+  {
+    "action": -1.93,
+    "box_violation": 0.0,
+    "contraction_violation": 0.0,
+    "controller_id": "robust_projection",
+    "counterexample_id": "nominal_model_mismatch_at_uncertainty_corner",
+    "input_violation": 0.0,
+    "next_state": 1.392,
+    "nominal_action": 1000000000.0,
+    "required_next_abs": 1.392,
+    "state": 1.5
+  },
+  {
+    "action": -1.93,
+    "box_violation": 0.0,
+    "contraction_violation": 0.0,
+    "controller_id": "robust_projection",
+    "counterexample_id": "extreme_finite_neural_output",
+    "input_violation": 0.0,
+    "next_state": 1.392,
+    "nominal_action": 1000000000000.0,
+    "required_next_abs": 1.392,
+    "state": 1.5
+  },
+  {
+    "action": 1.93,
+    "box_violation": 0.0,
+    "contraction_violation": 0.0,
+    "controller_id": "robust_projection",
+    "counterexample_id": "extreme_finite_neural_output",
+    "input_violation": 0.0,
+    "next_state": -1.392,
+    "nominal_action": -1000000000000.0,
+    "required_next_abs": 1.392,
+    "state": -1.5
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "generated_by": "safecontrol.pipeline.reproduce",
+  "generated_data": [
+    {
+      "bytes": 14875,
+      "path": "data/generated/training_samples.csv",
+      "sha256": "173e5fcaf24ba0a1c9f4d31b28437cf3b40f3dba5a0e6fea586d6400a7d709be"
+    }
+  ],
+  "provenance": "Deterministic synthetic training states and teacher targets; no operational data.",
+  "schema_version": "1.0",
+  "source_files": [
+    {
+      "bytes": 993,
+      "path": "config/benchmark.json",
+      "sha256": "c55b18eb6a9b5837a78406942c27050bf24fc16df5fab8ecdf3b45093cb00187"
+    },
+    {
+      "bytes": 568,
+      "path": "pyproject.toml",
+      "sha256": "aa1a95c080b94b22bf76220cc4b6e235271ec9d8699cbaddc22ea0bd469916f7"
+    },
+    {
+      "bytes": 92,
+      "path": "src/safecontrol/__init__.py",
+      "sha256": "df7b64bb2f179968400b39480715fc9dfd786838137f9e78a3ab54aa85bf45b0"
+    },
+    {
+      "bytes": 49,
+      "path": "src/safecontrol/__main__.py",
+      "sha256": "0f7d54f3fbb1f79a85eb8110f11793db99da6f3c61ee979de5abe9a1b5f3fdb3"
+    },
+    {
+      "bytes": 9343,
+      "path": "src/safecontrol/certificate.py",
+      "sha256": "e0afbda5fe5b50bcae52557ed3d56c73a372358b517e6fd9816167b38d8149d3"
+    },
+    {
+      "bytes": 1703,
+      "path": "src/safecontrol/cli.py",
+      "sha256": "a25e0f3729060b0a97134c42ac75ee780cda2de219a9fb330541b52153c6829b"
+    },
+    {
+      "bytes": 8808,
+      "path": "src/safecontrol/config.py",
+      "sha256": "842d305bc9ddb6aab9c5fe7595bfe4e613c5e7ea0f6251c87ec9ba87e6e40e09"
+    },
+    {
+      "bytes": 2577,
+      "path": "src/safecontrol/controllers.py",
+      "sha256": "7ade62c1e3b72c006a53b9197585cd0c3341d02d76fb490dc96f8e6372695ebf"
+    },
+    {
+      "bytes": 3660,
+      "path": "src/safecontrol/counterexamples.py",
+      "sha256": "f62f5d1d9823b2d2b04d755bfeab17dc17b6bb578607bf267531135f365f283f"
+    },
+    {
+      "bytes": 9270,
+      "path": "src/safecontrol/evaluation.py",
+      "sha256": "0a86fe77ee09497b28ea90ef0299a337c27fb0919e30083fa901ad1e6c67fefa"
+    },
+    {
+      "bytes": 1752,
+      "path": "src/safecontrol/model.py",
+      "sha256": "5a94c9f96b49dd256c4ae7ee23a13b7165eefcc5b7d6368d0f8e6c277fe430da"
+    },
+    {
+      "bytes": 4784,
+      "path": "src/safecontrol/pipeline.py",
+      "sha256": "4a22d09ccfb041105700f6f98220b66a8d555f4b929250133e25b77587a426f9"
+    },
+    {
+      "bytes": 4594,
+      "path": "src/safecontrol/policy.py",
+      "sha256": "1bb66dff2167e546b44ad92d3f40f07efe56008d30132df26138dbf234b8ba3e"
+    },
+    {
+      "bytes": 7612,
+      "path": "src/safecontrol/provenance.py",
+      "sha256": "02cf64a09e0ad55bcbed330ea99d4e848cda02fd6faa37e7ea24e5af05884c8d"
+    },
+    {
+      "bytes": 9062,
+      "path": "src/safecontrol/reporting.py",
+      "sha256": "c8ca520e40f81472eaf58625859f7fea076bc06ef404735016c42a581f3114e2"
+    },
+    {
+      "bytes": 4730,
+      "path": "src/safecontrol/simulation.py",
+      "sha256": "0c930e3e89304ef31deadceabc30d1ab9099bea0e477b9d05f5f2c9768390f68"
+    },
+    {
+      "bytes": 4573,
+      "path": "src/safecontrol/verification.py",
+      "sha256": "23aba8ff3a5dee0b965d7af0473a9d415176fd843f6da91eb579f154d88ad9c1"
+    }
+  ]
+}
