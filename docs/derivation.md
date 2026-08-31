@@ -146,7 +146,7 @@ d = 0.01, X = 1.5, U = 2.0,
 rho = 0.92, R = 0.15, eta = 0.012.
 ```
 
-The independently recomputed margins are:
+The margins recomputed through the separate verifier code path are:
 
 ```text
 eta-d                         = 0.002

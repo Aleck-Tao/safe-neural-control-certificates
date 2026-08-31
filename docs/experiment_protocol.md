@@ -60,4 +60,4 @@ The grid checks code and floating-point behavior. It is not presented as the pro
 
 ## Reproducibility
 
-The training table, learned weights, certificate, runs, counterexamples, trace, report, and dashboard are canonical generated files. Three linked manifests bind source/configuration, generated data, artifacts, and results. Exact regeneration is checked in a temporary directory on Linux and Windows for Python 3.11, 3.12, and 3.13.
+The training table, learned weights, certificate, runs, counterexamples, trace, report, and dashboard are canonical generated files. Three linked manifests bind source/configuration, generated data, artifacts, and results. Semantic regeneration within the declared numerical tolerance is checked in a temporary directory on Linux and Windows for Python 3.11, 3.12, and 3.13; exact byte regeneration is additionally checked only in the designated Windows/Python 3.12/NumPy 2.3.5 job.

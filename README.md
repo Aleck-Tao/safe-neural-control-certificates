@@ -71,7 +71,7 @@ The recurrence implies box forward invariance and
 limsup |x[k]| <= eta/(1-rho) = R.
 ```
 
-The committed certificate records four independently recomputed feasibility margins:
+The committed certificate records four feasibility margins recomputed through a separate in-repository verifier code path:
 
 | Obligation | Margin |
 |---|---:|
@@ -84,7 +84,7 @@ All are strictly positive. [`docs/derivation.md`](docs/derivation.md) gives the 
 
 ## Five-controller comparison
 
-The benchmark uses 3 scenarios, 6 initial states, and 80 steps per run. The corrupted-policy scenario adds `+3` to the neural output near the positive state boundary.
+The benchmark uses 3 scenarios, 6 initial states, and 80 steps per run. The corrupted-policy scenario adds `+3` to the neural output at every step; the highlighted counterexample starts near the positive state boundary.
 
 | Controller | Box-safe runs | Practical-contraction runs | Input-bounded runs | Interpretation |
 |---|---:|---:|---:|---|
@@ -125,7 +125,7 @@ safecontrol reproduce --root .
 safecontrol verify --root .
 ```
 
-`reproduce --semantic-check` regenerates the scientific values and compares JSON/CSV outputs within a declared `1e-6` absolute and relative tolerance across the six-platform/version CI matrix. `reproduce --check` additionally compares exact bytes in the pinned canonical job (Windows, Python 3.12, NumPy 2.3.5). This split is deliberate: linear-algebra libraries may choose different floating-point reduction orders even when the scientific result is unchanged. `verify` checks source/configuration hashes, synthetic training data, policy and certificate artifacts, result bindings, benchmark gates, exact directory coverage, and the independently recomputed analytic margins.
+`reproduce --semantic-check` regenerates the scientific values and compares JSON/CSV outputs within a declared `1e-6` absolute and relative tolerance across the six-platform/version CI matrix. `reproduce --check` additionally compares exact bytes in the designated canonical job (Windows `windows-latest`, Python 3.12, NumPy 2.3.5). This split is deliberate: linear-algebra libraries may choose different floating-point reduction orders even when the scientific result is unchanged. `verify` checks source/configuration hashes, synthetic training data, policy and certificate artifacts, result bindings, benchmark gates, exact directory coverage, and the separate-code-path analytic margin recomputation.
 
 ## Evidence chain
 

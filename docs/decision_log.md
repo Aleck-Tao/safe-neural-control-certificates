@@ -2,7 +2,7 @@
 
 ## D-001: Exact scalar certificate before numerical SDP
 
-The first release uses a scalar sampled-data plant and a closed-form robust interval. This sacrifices system complexity but permits every feasibility condition and margin to be derived, independently recomputed, and tested without relying on an approximate conic solver.
+The first release uses a scalar sampled-data plant and a closed-form robust interval. This sacrifices system complexity but permits every feasibility condition and margin to be derived, recomputed through a separate in-repository verifier path, and tested without relying on an approximate conic solver.
 
 Quadratic constraints and semidefinite programming remain a later research direction, not a label attached to the scalar result.
 
