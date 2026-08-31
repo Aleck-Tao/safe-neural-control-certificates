@@ -21,3 +21,7 @@ The linear controller performs better on the chosen scalar linear plant. It is n
 ## D-005: Bind source, data, artifacts, and results
 
 The evidence chain uses three linked manifests. This detects stale generated files and source/result changes, but it is explicitly not a signed attestation or proof of physical validity.
+
+## D-006: Prefer a conditioned readout over a cosmetic fit
+
+The random-feature readout uses ridge `0.01`. A weaker regularizer fitted the synthetic teacher more tightly but produced an ill-conditioned normal system and platform-sensitive coefficients. The stronger value keeps the training RMSE below `0.005`; this benchmark values a stable, falsifiable control experiment over a cosmetically smaller imitation error.

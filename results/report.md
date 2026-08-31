@@ -18,18 +18,18 @@ All margins are recomputed independently by `safecontrol verify`; the finite gri
 
 | Controller | Runs | Box safe | Practical contraction | Input bounded | Target tube | Mean intervention | Mean cost |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Raw NN | 18 | 0.667 | 0.000 | 0.556 | 0.333 | 0.000 | 8.880 |
-| Input-clipped NN | 18 | 0.667 | 0.000 | 1.000 | 0.333 | 0.130 | 9.309 |
-| Nominal projection | 18 | 1.000 | 0.333 | 1.000 | 0.333 | 0.761 | 8.949 |
-| Robust projection | 18 | 1.000 | 1.000 | 1.000 | 0.500 | 0.785 | 8.257 |
+| Raw NN | 18 | 0.667 | 0.000 | 0.556 | 0.333 | 0.000 | 8.891 |
+| Input-clipped NN | 18 | 0.667 | 0.000 | 1.000 | 0.333 | 0.135 | 9.208 |
+| Nominal projection | 18 | 1.000 | 0.333 | 1.000 | 0.333 | 0.756 | 8.997 |
+| Robust projection | 18 | 1.000 | 1.000 | 1.000 | 0.500 | 0.783 | 8.307 |
 | Linear baseline | 18 | 1.000 | 1.000 | 1.000 | 1.000 | 0.004 | 7.610 |
 
 ## Deliberate negative controls
 
 | Case | Controller | Box violation | Contraction violation | Input violation |
 |---|---|---:|---:|---:|
-| biased_neural_output_at_safe_boundary | Raw NN | 0.033703 | 0.187703 | 0.000000 |
-| biased_neural_output_at_safe_boundary | Input-clipped NN | 0.033703 | 0.187703 | 0.000000 |
+| biased_neural_output_at_safe_boundary | Raw NN | 0.074173 | 0.228173 | 0.000000 |
+| biased_neural_output_at_safe_boundary | Input-clipped NN | 0.074173 | 0.228173 | 0.000000 |
 | biased_neural_output_at_safe_boundary | Nominal projection | 0.000000 | 0.014500 | 0.000000 |
 | biased_neural_output_at_safe_boundary | Robust projection | 0.000000 | 0.000000 | 0.000000 |
 | biased_neural_output_at_safe_boundary | Linear baseline | 0.000000 | 0.000000 | 0.000000 |

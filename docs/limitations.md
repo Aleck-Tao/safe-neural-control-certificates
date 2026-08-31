@@ -33,6 +33,8 @@ The linear stable baseline achieves a lower mean quadratic cost and a higher fin
 
 The certificate has closed-form margins and does not depend on an optimization solver. The verifier recomputes those margins separately, but both generator and verifier are ordinary software rather than a formally verified proof assistant.
 
+The repository distinguishes semantic from byte-exact reproduction. Six CI jobs compare the scientific outputs within `1e-6`; one pinned Windows/Python/NumPy job additionally requires exact bytes. This avoids treating harmless BLAS reduction-order differences as scientific failures while retaining a strict canonical replay target.
+
 SHA-256 manifests expose byte-level changes and incomplete regeneration. They are unsigned, do not establish authorship, and do not make synthetic data realistic.
 
 ## Next research step

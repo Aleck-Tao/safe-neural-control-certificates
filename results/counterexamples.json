@@ -1,25 +1,25 @@
 [
   {
-    "action": 0.01203198448,
-    "box_violation": 0.033703198448,
-    "contraction_violation": 0.187703198448,
+    "action": 0.416727949461,
+    "box_violation": 0.074172794946,
+    "contraction_violation": 0.228172794946,
     "controller_id": "raw_nn",
     "counterexample_id": "biased_neural_output_at_safe_boundary",
     "input_violation": 0.0,
-    "next_state": 1.533703198448,
-    "nominal_action": 0.01203198448,
+    "next_state": 1.574172794946,
+    "nominal_action": 0.416727949461,
     "required_next_abs": 1.346,
     "state": 1.45
   },
   {
-    "action": 0.01203198448,
-    "box_violation": 0.033703198448,
-    "contraction_violation": 0.187703198448,
+    "action": 0.416727949461,
+    "box_violation": 0.074172794946,
+    "contraction_violation": 0.228172794946,
     "controller_id": "input_clipped_nn",
     "counterexample_id": "biased_neural_output_at_safe_boundary",
     "input_violation": 0.0,
-    "next_state": 1.533703198448,
-    "nominal_action": 0.01203198448,
+    "next_state": 1.574172794946,
+    "nominal_action": 0.416727949461,
     "required_next_abs": 1.346,
     "state": 1.45
   },
@@ -31,7 +31,7 @@
     "counterexample_id": "biased_neural_output_at_safe_boundary",
     "input_violation": 0.0,
     "next_state": 1.3605,
-    "nominal_action": 0.01203198448,
+    "nominal_action": 0.416727949461,
     "required_next_abs": 1.346,
     "state": 1.45
   },
@@ -43,7 +43,7 @@
     "counterexample_id": "biased_neural_output_at_safe_boundary",
     "input_violation": 0.0,
     "next_state": 1.346,
-    "nominal_action": 0.01203198448,
+    "nominal_action": 0.416727949461,
     "required_next_abs": 1.346,
     "state": 1.45
   },

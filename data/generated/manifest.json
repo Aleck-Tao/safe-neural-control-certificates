@@ -2,9 +2,9 @@
   "generated_by": "safecontrol.pipeline.reproduce",
   "generated_data": [
     {
-      "bytes": 14875,
+      "bytes": 14870,
       "path": "data/generated/training_samples.csv",
-      "sha256": "173e5fcaf24ba0a1c9f4d31b28437cf3b40f3dba5a0e6fea586d6400a7d709be"
+      "sha256": "160c6987a56d5cb04a44adaa623392dde336f0752fd0a6338fe284de12fdb6df"
     }
   ],
   "provenance": "Deterministic synthetic training states and teacher targets; no operational data.",
@@ -13,12 +13,12 @@
     {
       "bytes": 993,
       "path": "config/benchmark.json",
-      "sha256": "c55b18eb6a9b5837a78406942c27050bf24fc16df5fab8ecdf3b45093cb00187"
+      "sha256": "e9e47ac614e353e914fe12eed380b79f5455d8e8ce5df2aefc1c86ad04dabfbb"
     },
     {
-      "bytes": 568,
+      "bytes": 565,
       "path": "pyproject.toml",
-      "sha256": "aa1a95c080b94b22bf76220cc4b6e235271ec9d8699cbaddc22ea0bd469916f7"
+      "sha256": "61825ad62a0c8a2a2aa0dc7c25a3e4f86ecad52d8b3e5b188f2d985615e8bcbd"
     },
     {
       "bytes": 92,
@@ -36,9 +36,9 @@
       "sha256": "e0afbda5fe5b50bcae52557ed3d56c73a372358b517e6fd9816167b38d8149d3"
     },
     {
-      "bytes": 1703,
+      "bytes": 2238,
       "path": "src/safecontrol/cli.py",
-      "sha256": "a25e0f3729060b0a97134c42ac75ee780cda2de219a9fb330541b52153c6829b"
+      "sha256": "78c008f58dd4ab475d345df184663ac9520d0c978f6d7348b2cc03f45b9ec5d5"
     },
     {
       "bytes": 8808,
@@ -66,9 +66,9 @@
       "sha256": "5a94c9f96b49dd256c4ae7ee23a13b7165eefcc5b7d6368d0f8e6c277fe430da"
     },
     {
-      "bytes": 4784,
+      "bytes": 9762,
       "path": "src/safecontrol/pipeline.py",
-      "sha256": "4a22d09ccfb041105700f6f98220b66a8d555f4b929250133e25b77587a426f9"
+      "sha256": "845b22aeb93b866da31f81af16cd575ce66b9e16f76b820662e16ab8063ee337"
     },
     {
       "bytes": 4594,

@@ -21,7 +21,7 @@
     "maximum_state": 0.8,
     "sample_count": 401,
     "hidden_units": 9,
-    "ridge": 1e-8
+    "ridge": 0.01
   },
   "baselines": {
     "linear_gain": 1.5

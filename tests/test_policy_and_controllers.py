@@ -29,7 +29,7 @@ class PolicyAndControllerTests(unittest.TestCase):
         np.testing.assert_array_equal(self.targets, targets)
         np.testing.assert_array_equal(self.predictions, predictions)
         rmse = float(np.sqrt(np.mean((self.predictions - self.targets) ** 2)))
-        self.assertLess(rmse, 0.001)
+        self.assertLess(rmse, 0.005)
 
     def test_policy_round_trip(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

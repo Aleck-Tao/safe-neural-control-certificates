@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "Yuanyuan Tao" }]
-dependencies = ["numpy>=1.26,<3"]
+dependencies = ["numpy==2.3.5"]
 
 [project.scripts]
 safecontrol = "safecontrol.cli:main"
@@ -20,4 +20,3 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

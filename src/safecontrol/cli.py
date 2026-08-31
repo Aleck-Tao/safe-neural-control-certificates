@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Sequence
 
 from .config import load_config
-from .pipeline import check_reproduction, reproduce
+from .pipeline import check_reproduction, check_semantic_reproduction, reproduce
 from .provenance import verify_repository
 
 
@@ -23,7 +23,12 @@ def _parser() -> argparse.ArgumentParser:
     reproduce_parser.add_argument(
         "--check",
         action="store_true",
-        help="regenerate in a temporary directory and compare exact bytes",
+        help="regenerate in a temporary directory and compare exact bytes (canonical environment)",
+    )
+    reproduce_parser.add_argument(
+        "--semantic-check",
+        action="store_true",
+        help="regenerate and compare scientific values within the cross-platform tolerance",
     )
     verify_parser = subparsers.add_parser(
         "verify", help="verify hashes, bindings, benchmark gates, and certificate"
@@ -37,7 +42,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         root = Path(args.root).resolve()
         if args.command == "reproduce":
-            result = check_reproduction(root) if args.check else reproduce(root)
+            if args.check and args.semantic_check:
+                raise ValueError("--check and --semantic-check are mutually exclusive")
+            if args.check:
+                result = check_reproduction(root)
+            elif args.semantic_check:
+                result = check_semantic_reproduction(root)
+            else:
+                result = reproduce(root)
         else:
             config = load_config(root / "config" / "benchmark.json")
             result = verify_repository(root, config)

@@ -7,21 +7,29 @@ on:
 jobs:
   test-and-reproduce:
     timeout-minutes: 10
-    env:
-      PYTHONDONTWRITEBYTECODE: "1"
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        python-version: ["3.11", "3.12", "3.13"]
+        include:
+          - {os: ubuntu-latest, python-version: "3.11", byte-exact: "0"}
+          - {os: ubuntu-latest, python-version: "3.12", byte-exact: "0"}
+          - {os: ubuntu-latest, python-version: "3.13", byte-exact: "0"}
+          - {os: windows-latest, python-version: "3.11", byte-exact: "0"}
+          - {os: windows-latest, python-version: "3.12", byte-exact: "1"}
+          - {os: windows-latest, python-version: "3.13", byte-exact: "0"}
     runs-on: ${{ matrix.os }}
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      SAFECONTROL_BYTE_EXACT: ${{ matrix.byte-exact }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e .
       - run: python -B -m unittest discover -s tests -v
       - run: safecontrol verify --root .
-      - run: safecontrol reproduce --root . --check
+      - run: safecontrol reproduce --root . --semantic-check
+      - if: matrix.byte-exact == '1'
+        run: safecontrol reproduce --root . --check

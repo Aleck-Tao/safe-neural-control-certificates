@@ -1,13 +1,18 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 import shutil
 import tempfile
 import unittest
 
 from safecontrol.cli import main
 from safecontrol.config import load_config
-from safecontrol.pipeline import check_reproduction, reproduce
+from safecontrol.pipeline import (
+    check_reproduction,
+    check_semantic_reproduction,
+    reproduce,
+)
 from safecontrol.provenance import verify_repository
 
 
@@ -28,9 +33,17 @@ class PipelineAndCliTests(unittest.TestCase):
         )
         return temporary, destination
 
-    def test_committed_artifacts_reproduce_exactly(self) -> None:
+    @unittest.skipUnless(
+        os.environ.get("SAFECONTROL_BYTE_EXACT") == "1",
+        "exact-byte comparison is reserved for the pinned canonical CI job",
+    )
+    def test_committed_artifacts_reproduce_exactly_in_canonical_environment(self) -> None:
         result = check_reproduction(ROOT)
         self.assertTrue(result["reproducible"])
+
+    def test_committed_artifacts_reproduce_semantically(self) -> None:
+        result = check_semantic_reproduction(ROOT)
+        self.assertTrue(result["semantically_reproducible"])
 
     def test_fresh_copy_reproduces_and_verifies(self) -> None:
         _, repository = self._copy_repository()
@@ -66,7 +79,11 @@ class PipelineAndCliTests(unittest.TestCase):
 
     def test_cli_verify_and_check(self) -> None:
         self.assertEqual(main(["verify", "--root", str(ROOT)]), 0)
-        self.assertEqual(main(["reproduce", "--root", str(ROOT), "--check"]), 0)
+        self.assertEqual(
+            main(["reproduce", "--root", str(ROOT), "--semantic-check"]), 0
+        )
+        if os.environ.get("SAFECONTROL_BYTE_EXACT") == "1":
+            self.assertEqual(main(["reproduce", "--root", str(ROOT), "--check"]), 0)
 
 
 if __name__ == "__main__":

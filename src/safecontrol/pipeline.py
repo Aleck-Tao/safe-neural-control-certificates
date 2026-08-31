@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import csv
+import json
 import math
 from pathlib import Path
+import shutil
 from tempfile import TemporaryDirectory
 
 import numpy as np
@@ -81,6 +84,19 @@ GENERATED_FILES = tuple(
     )
 )
 
+SEMANTIC_JSON_FILES = (
+    "artifacts/neural_policy.json",
+    "artifacts/certificate.json",
+    "results/benchmark_summary.json",
+    "results/counterexamples.json",
+)
+
+SEMANTIC_CSV_FILES = (
+    "data/generated/training_samples.csv",
+    "results/benchmark_runs.csv",
+    "results/representative_trace.csv",
+)
+
 
 def reproduce(source_root: str | Path, output_root: str | Path | None = None) -> dict[str, object]:
     source = Path(source_root).resolve()
@@ -148,3 +164,109 @@ def check_reproduction(root: str | Path) -> dict[str, object]:
     if mismatches:
         raise ValueError(f"generated artifacts are not reproducible: {mismatches}")
     return {"reproducible": True, "files_compared": len(GENERATED_FILES)}
+
+
+def _compare_semantic_values(
+    expected: object,
+    actual: object,
+    location: str,
+    tolerance: float,
+) -> None:
+    if isinstance(expected, bool) or isinstance(actual, bool):
+        if expected is not actual:
+            raise ValueError(f"semantic mismatch at {location}: {expected!r} != {actual!r}")
+        return
+    if isinstance(expected, (int, float)) and isinstance(actual, (int, float)):
+        if not math.isclose(float(expected), float(actual), rel_tol=tolerance, abs_tol=tolerance):
+            raise ValueError(f"numeric semantic mismatch at {location}: {expected!r} != {actual!r}")
+        return
+    if isinstance(expected, dict) and isinstance(actual, dict):
+        ignored = {key for key in expected if key.endswith("_sha256")}
+        expected_keys = set(expected) - ignored
+        actual_keys = set(actual) - {key for key in actual if key.endswith("_sha256")}
+        if expected_keys != actual_keys:
+            raise ValueError(f"semantic key mismatch at {location}")
+        for key in sorted(expected_keys):
+            _compare_semantic_values(expected[key], actual[key], f"{location}.{key}", tolerance)
+        return
+    if isinstance(expected, list) and isinstance(actual, list):
+        if len(expected) != len(actual):
+            raise ValueError(f"semantic list-length mismatch at {location}")
+        for index, (expected_item, actual_item) in enumerate(zip(expected, actual, strict=True)):
+            _compare_semantic_values(expected_item, actual_item, f"{location}[{index}]", tolerance)
+        return
+    if expected != actual:
+        raise ValueError(f"semantic mismatch at {location}: {expected!r} != {actual!r}")
+
+
+def _csv_rows(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8", newline="") as stream:
+        return list(csv.DictReader(stream))
+
+
+def _compare_csv(expected: Path, actual: Path, tolerance: float) -> None:
+    expected_rows = _csv_rows(expected)
+    actual_rows = _csv_rows(actual)
+    if len(expected_rows) != len(actual_rows):
+        raise ValueError(f"semantic row-count mismatch for {expected.as_posix()}")
+    for row_index, (expected_row, actual_row) in enumerate(
+        zip(expected_rows, actual_rows, strict=True)
+    ):
+        if expected_row.keys() != actual_row.keys():
+            raise ValueError(f"semantic column mismatch for {expected.as_posix()}")
+        for key in expected_row:
+            expected_value = expected_row[key]
+            actual_value = actual_row[key]
+            try:
+                expected_number = float(expected_value)
+                actual_number = float(actual_value)
+            except ValueError:
+                if expected_value != actual_value:
+                    raise ValueError(
+                        f"semantic mismatch for {expected.as_posix()} row {row_index} column {key}"
+                    )
+            else:
+                if not math.isclose(
+                    expected_number,
+                    actual_number,
+                    rel_tol=tolerance,
+                    abs_tol=tolerance,
+                ):
+                    raise ValueError(
+                        f"numeric semantic mismatch for {expected.as_posix()} "
+                        f"row {row_index} column {key}"
+                    )
+
+
+def check_semantic_reproduction(
+    root: str | Path,
+    tolerance: float = 1e-6,
+) -> dict[str, object]:
+    source = Path(root).resolve()
+    with TemporaryDirectory(prefix="safecontrol-semantic-") as temporary:
+        candidate = Path(temporary)
+        shutil.copytree(
+            source,
+            candidate,
+            dirs_exist_ok=True,
+            ignore=shutil.ignore_patterns(
+                ".git", ".venv", "__pycache__", "*.pyc", "*.egg-info"
+            ),
+        )
+        reproduce(candidate)
+        candidate_config = load_config(candidate / "config" / "benchmark.json")
+        from .provenance import verify_repository
+
+        verify_repository(candidate, candidate_config)
+        for relative in SEMANTIC_JSON_FILES:
+            expected = json.loads((source / relative).read_text(encoding="utf-8"))
+            actual = json.loads((candidate / relative).read_text(encoding="utf-8"))
+            _compare_semantic_values(expected, actual, relative, tolerance)
+        for relative in SEMANTIC_CSV_FILES:
+            _compare_csv(source / relative, candidate / relative, tolerance)
+    return {
+        "semantically_reproducible": True,
+        "json_files_compared": len(SEMANTIC_JSON_FILES),
+        "csv_files_compared": len(SEMANTIC_CSV_FILES),
+        "absolute_and_relative_tolerance": tolerance,
+    }

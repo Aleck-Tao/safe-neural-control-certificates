@@ -100,7 +100,7 @@ The linear baseline outperforming the learned controller is retained as a result
 
 ## Explicit counterexamples
 
-- At `x = 1.45`, `a = 1.05`, outward disturbance, and a `+3` neural-output bias, both the raw and merely input-clipped policies produce `x_next = 1.533703`, outside the `1.5` box. The robust projection produces `x_next = 1.346000`.
+- At `x = 1.45`, `a = 1.05`, outward disturbance, and a `+3` neural-output bias, both the raw and merely input-clipped policies produce `x_next = 1.574173`, outside the `1.5` box. The robust projection produces `x_next = 1.346000`.
 - At `x = 1.5`, a projection designed only for `a = 1.04` violates the practical contraction bound by `0.015` when evaluated at `a = 1.05`. The robust projection meets the bound at equality.
 - Neural nominal outputs of magnitude `1e12` at both state boundaries remain finite and certified after robust projection.
 
@@ -125,7 +125,7 @@ safecontrol reproduce --root .
 safecontrol verify --root .
 ```
 
-`reproduce --check` regenerates all generated files in a temporary directory and compares exact bytes. `verify` checks source/configuration hashes, synthetic training data, policy and certificate artifacts, result bindings, benchmark gates, exact directory coverage, and the independently recomputed analytic margins.
+`reproduce --semantic-check` regenerates the scientific values and compares JSON/CSV outputs within a declared `1e-6` absolute and relative tolerance across the six-platform/version CI matrix. `reproduce --check` additionally compares exact bytes in the pinned canonical job (Windows, Python 3.12, NumPy 2.3.5). This split is deliberate: linear-algebra libraries may choose different floating-point reduction orders even when the scientific result is unchanged. `verify` checks source/configuration hashes, synthetic training data, policy and certificate artifacts, result bindings, benchmark gates, exact directory coverage, and the independently recomputed analytic margins.
 
 ## Evidence chain
 
@@ -163,7 +163,7 @@ Demonstrated:
 - a closed-form forward-invariance and practical-contraction certificate;
 - coefficient uncertainty and adversarial per-step bounded disturbances;
 - classical, weak, nominal, and robust baselines with explicit counterexamples;
-- source-to-data-to-certificate-to-result reproducibility on CPU-only CI.
+- source-to-data-to-certificate-to-result semantic reproducibility across CPU-only CI, plus canonical byte-exact replay.
 
 Not demonstrated:
 

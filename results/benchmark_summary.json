@@ -7,7 +7,7 @@
     "input_authority": 0.007,
     "uncertainty_interval_width_next_state": 0.004
   },
-  "artifact_manifest_sha256": "fd867a91614f1913c578466059bfdb21872a613d7123188b10f8e97e21645ddd",
+  "artifact_manifest_sha256": "d64f94b42c311610b230a298948527fe5b9b4100bb2293005d4067f5d2dc0374",
   "benchmark_checks": [
     {
       "criterion": "robust projection satisfies all sampled closed-loop gates",
@@ -36,11 +36,11 @@
       "completed_horizon_rate": 0.666666666667,
       "controller_id": "raw_nn",
       "input_bounds_rate": 0.555555555556,
-      "max_box_violation": 0.072507178929,
-      "max_contraction_violation": 0.306687059592,
-      "max_input_violation": 3.912196459657,
+      "max_box_violation": 0.115007069638,
+      "max_contraction_violation": 0.307021831015,
+      "max_input_violation": 3.498097146795,
       "mean_intervention_rate": 0.0,
-      "mean_quadratic_cost": 8.879697879444,
+      "mean_quadratic_cost": 8.890846119277,
       "practical_contraction_rate": 0.0,
       "runs": 18,
       "target_tube_rate": 0.333333333333
@@ -50,11 +50,11 @@
       "completed_horizon_rate": 0.666666666667,
       "controller_id": "input_clipped_nn",
       "input_bounds_rate": 1.0,
-      "max_box_violation": 0.072246745607,
+      "max_box_violation": 0.111869247091,
       "max_contraction_violation": 0.28826231298,
       "max_input_violation": 0.0,
-      "mean_intervention_rate": 0.13024691358,
-      "mean_quadratic_cost": 9.308696853648,
+      "mean_intervention_rate": 0.135144099727,
+      "mean_quadratic_cost": 9.207665422908,
       "practical_contraction_rate": 0.0,
       "runs": 18,
       "target_tube_rate": 0.333333333333
@@ -67,8 +67,8 @@
       "max_box_violation": 0.0,
       "max_contraction_violation": 0.0145,
       "max_input_violation": 0.0,
-      "mean_intervention_rate": 0.761111111111,
-      "mean_quadratic_cost": 8.948767578362,
+      "mean_intervention_rate": 0.75625,
+      "mean_quadratic_cost": 8.996557178187,
       "practical_contraction_rate": 0.333333333333,
       "runs": 18,
       "target_tube_rate": 0.333333333333
@@ -81,8 +81,8 @@
       "max_box_violation": 0.0,
       "max_contraction_violation": 0.0,
       "max_input_violation": 0.0,
-      "mean_intervention_rate": 0.784722222222,
-      "mean_quadratic_cost": 8.256909249243,
+      "mean_intervention_rate": 0.782638888889,
+      "mean_quadratic_cost": 8.307065704057,
       "practical_contraction_rate": 1.0,
       "runs": 18,
       "target_tube_rate": 0.5
@@ -102,7 +102,7 @@
       "target_tube_rate": 1.0
     }
   ],
-  "data_manifest_sha256": "9aec045fad82d1f52929290917496376daba0e3909255f7ec6d4b299a10a2e65",
+  "data_manifest_sha256": "5235e3a3fd1e0fb85fcfaf0c9bb323d2511d1176c1ee5363aeca8bffc8dfa1a0",
   "finite_grid_audit": {
     "grid_points": 3001,
     "interpretation": "Regression audit of the implementation at a finite grid; the analytic certificate, not this grid, supplies the guarantee.",
@@ -118,5 +118,5 @@
   "scenario_count": 3,
   "schema_version": "1.0",
   "scope": "Scalar uncertain sampled-data benchmark; deterministic neural nominal policy; exact robust projection; no physical or MIMO claim.",
-  "training_rmse": 0.00015407429
+  "training_rmse": 0.003543516044
 }
