@@ -1,0 +1,296 @@
+{
+  "analytic_rho_lower": 0.914814814815,
+  "analytic_rho_upper": 0.933333333333,
+  "boundary_rule": "Any condition within +/- tolerance is numerical_boundary; no rollout or certificate claim.",
+  "fixed_target_radius": 0.15,
+  "grid_points_per_accepted_rho": 301,
+  "numeric_tolerance": 1e-10,
+  "policy_source": "artifacts/neural_policy.json; identical fixed policy at every rho",
+  "rates": [
+    {
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.1161,
+        "disturbance_absorption_margin": 0.0029,
+        "input_authority_margin": -0.0011,
+        "uncertainty_interval_width_margin_next_state": 0.0058
+      },
+      "minimum_margin": -0.0011,
+      "rho": 0.914,
+      "rollouts": 0,
+      "status": "rejected"
+    },
+    {
+      "all_rollouts_complete": true,
+      "all_rollouts_pass": true,
+      "by_scenario": [
+        {
+          "mean_intervention_rate": 0.370833333333,
+          "mean_quadratic_cost": 6.256579406299,
+          "scenario_id": "nominal"
+        },
+        {
+          "mean_intervention_rate": 0.94375,
+          "mean_quadratic_cost": 9.536847749524,
+          "scenario_id": "uncertain_outward"
+        },
+        {
+          "mean_intervention_rate": 1.0,
+          "mean_quadratic_cost": 8.717616922105,
+          "scenario_id": "policy_output_corruption"
+        }
+      ],
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.11475,
+        "disturbance_absorption_margin": 0.00275,
+        "input_authority_margin": 0.00025,
+        "uncertainty_interval_width_margin_next_state": 0.0055
+      },
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.771527777778,
+      "mean_quadratic_cost": 8.170348025976,
+      "minimum_grid_interval_width": 0.0025,
+      "minimum_margin": 0.00025,
+      "rho": 0.915,
+      "rollouts": 18,
+      "status": "certified_interior"
+    },
+    {
+      "all_rollouts_complete": true,
+      "all_rollouts_pass": true,
+      "by_scenario": [
+        {
+          "mean_intervention_rate": 0.389583333333,
+          "mean_quadratic_cost": 6.282169754322,
+          "scenario_id": "nominal"
+        },
+        {
+          "mean_intervention_rate": 0.9375,
+          "mean_quadratic_cost": 9.617078286291,
+          "scenario_id": "uncertain_outward"
+        },
+        {
+          "mean_intervention_rate": 1.0,
+          "mean_quadratic_cost": 8.854190118292,
+          "scenario_id": "policy_output_corruption"
+        }
+      ],
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.1107,
+        "disturbance_absorption_margin": 0.0023,
+        "input_authority_margin": 0.0043,
+        "uncertainty_interval_width_margin_next_state": 0.0046
+      },
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.775694444444,
+      "mean_quadratic_cost": 8.251146052968,
+      "minimum_grid_interval_width": 0.043,
+      "minimum_margin": 0.0023,
+      "rho": 0.918,
+      "rollouts": 18,
+      "status": "certified_interior"
+    },
+    {
+      "all_rollouts_complete": true,
+      "all_rollouts_pass": true,
+      "by_scenario": [
+        {
+          "mean_intervention_rate": 0.4125,
+          "mean_quadratic_cost": 6.29783818774,
+          "scenario_id": "nominal"
+        },
+        {
+          "mean_intervention_rate": 0.935416666667,
+          "mean_quadratic_cost": 9.672310494424,
+          "scenario_id": "uncertain_outward"
+        },
+        {
+          "mean_intervention_rate": 1.0,
+          "mean_quadratic_cost": 8.951048430009,
+          "scenario_id": "policy_output_corruption"
+        }
+      ],
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.108,
+        "disturbance_absorption_margin": 0.002,
+        "input_authority_margin": 0.007,
+        "uncertainty_interval_width_margin_next_state": 0.004
+      },
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.782638888889,
+      "mean_quadratic_cost": 8.307065704057,
+      "minimum_grid_interval_width": 0.04,
+      "minimum_margin": 0.002,
+      "rho": 0.92,
+      "rollouts": 18,
+      "status": "certified_interior"
+    },
+    {
+      "all_rollouts_complete": true,
+      "all_rollouts_pass": true,
+      "by_scenario": [
+        {
+          "mean_intervention_rate": 0.458333333333,
+          "mean_quadratic_cost": 6.328795014057,
+          "scenario_id": "nominal"
+        },
+        {
+          "mean_intervention_rate": 0.929166666667,
+          "mean_quadratic_cost": 9.785389536481,
+          "scenario_id": "uncertain_outward"
+        },
+        {
+          "mean_intervention_rate": 1.0,
+          "mean_quadratic_cost": 9.160318175173,
+          "scenario_id": "policy_output_corruption"
+        }
+      ],
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.1026,
+        "disturbance_absorption_margin": 0.0014,
+        "input_authority_margin": 0.0124,
+        "uncertainty_interval_width_margin_next_state": 0.0028
+      },
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.795833333333,
+      "mean_quadratic_cost": 8.424834241903,
+      "minimum_grid_interval_width": 0.028,
+      "minimum_margin": 0.0014,
+      "rho": 0.924,
+      "rollouts": 18,
+      "status": "certified_interior"
+    },
+    {
+      "all_rollouts_complete": true,
+      "all_rollouts_pass": true,
+      "by_scenario": [
+        {
+          "mean_intervention_rate": 0.51875,
+          "mean_quadratic_cost": 6.350856277748,
+          "scenario_id": "nominal"
+        },
+        {
+          "mean_intervention_rate": 0.920833333333,
+          "mean_quadratic_cost": 9.873743520209,
+          "scenario_id": "uncertain_outward"
+        },
+        {
+          "mean_intervention_rate": 1.0,
+          "mean_quadratic_cost": 9.332509497811,
+          "scenario_id": "policy_output_corruption"
+        }
+      ],
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.09855,
+        "disturbance_absorption_margin": 0.00095,
+        "input_authority_margin": 0.01645,
+        "uncertainty_interval_width_margin_next_state": 0.0019
+      },
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.813194444444,
+      "mean_quadratic_cost": 8.519036431923,
+      "minimum_grid_interval_width": 0.019,
+      "minimum_margin": 0.00095,
+      "rho": 0.927,
+      "rollouts": 18,
+      "status": "certified_interior"
+    },
+    {
+      "all_rollouts_complete": true,
+      "all_rollouts_pass": true,
+      "by_scenario": [
+        {
+          "mean_intervention_rate": 0.65,
+          "mean_quadratic_cost": 6.369599222796,
+          "scenario_id": "nominal"
+        },
+        {
+          "mean_intervention_rate": 0.914583333333,
+          "mean_quadratic_cost": 9.962235127102,
+          "scenario_id": "uncertain_outward"
+        },
+        {
+          "mean_intervention_rate": 1.0,
+          "mean_quadratic_cost": 9.519567668248,
+          "scenario_id": "policy_output_corruption"
+        }
+      ],
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.0945,
+        "disturbance_absorption_margin": 0.0005,
+        "input_authority_margin": 0.0205,
+        "uncertainty_interval_width_margin_next_state": 0.001
+      },
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.854861111111,
+      "mean_quadratic_cost": 8.617134006048,
+      "minimum_grid_interval_width": 0.01,
+      "minimum_margin": 0.0005,
+      "rho": 0.93,
+      "rollouts": 18,
+      "status": "certified_interior"
+    },
+    {
+      "all_rollouts_complete": true,
+      "all_rollouts_pass": true,
+      "by_scenario": [
+        {
+          "mean_intervention_rate": 0.829166666667,
+          "mean_quadratic_cost": 6.388024484509,
+          "scenario_id": "nominal"
+        },
+        {
+          "mean_intervention_rate": 0.904166666667,
+          "mean_quadratic_cost": 10.051947493814,
+          "scenario_id": "uncertain_outward"
+        },
+        {
+          "mean_intervention_rate": 1.0,
+          "mean_quadratic_cost": 9.723413970407,
+          "scenario_id": "policy_output_corruption"
+        }
+      ],
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.09045,
+        "disturbance_absorption_margin": 5e-05,
+        "input_authority_margin": 0.02455,
+        "uncertainty_interval_width_margin_next_state": 0.0001
+      },
+      "max_box_violation": 0.0,
+      "max_contraction_violation": 0.0,
+      "max_input_violation": 0.0,
+      "mean_intervention_rate": 0.911111111111,
+      "mean_quadratic_cost": 8.721128649577,
+      "minimum_grid_interval_width": 0.001,
+      "minimum_margin": 5e-05,
+      "rho": 0.933,
+      "rollouts": 18,
+      "status": "certified_interior"
+    },
+    {
+      "margins_next_state_units": {
+        "box_invariance_margin": 0.0891,
+        "disturbance_absorption_margin": -0.0001,
+        "input_authority_margin": 0.0259,
+        "uncertainty_interval_width_margin_next_state": -0.0002
+      },
+      "minimum_margin": -0.0002,
+      "rho": 0.934,
+      "rollouts": 0,
+      "status": "rejected"
+    }
+  ],
+  "rollout_count": 126,
+  "schema_version": 1
+}

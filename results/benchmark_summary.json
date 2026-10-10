@@ -7,7 +7,7 @@
     "input_authority": 0.007,
     "uncertainty_interval_width_next_state": 0.004
   },
-  "artifact_manifest_sha256": "d64f94b42c311610b230a298948527fe5b9b4100bb2293005d4067f5d2dc0374",
+  "artifact_manifest_sha256": "d02444d92342fa87850f2e77d2076b38e909b31c7a9544d9767516755e16b5ac",
   "benchmark_checks": [
     {
       "criterion": "robust projection satisfies all sampled closed-loop gates",
@@ -102,7 +102,7 @@
       "target_tube_rate": 1.0
     }
   ],
-  "data_manifest_sha256": "5235e3a3fd1e0fb85fcfaf0c9bb323d2511d1176c1ee5363aeca8bffc8dfa1a0",
+  "data_manifest_sha256": "bd650c860367d9a8ef9af3e46135732c3628d529543295b5c362a92baa8c7593",
   "finite_grid_audit": {
     "grid_points": 3001,
     "interpretation": "Regression audit of the implementation at a finite grid; the analytic certificate, not this grid, supplies the guarantee.",

@@ -43,6 +43,8 @@ The parameters also expose a useful tradeoff. Keeping the plant, disturbance, in
 
 See the [derivation](docs/derivation.md) for the proof and [result analysis](docs/result_analysis.md) for this parameter calculation and the difference between an ultimate bound and finite-horizon tube entry.
 
+The [fixed-radius sweep](docs/rho_sweep.md) now tests seven interior contraction rates and two rejected settings. All 126 accepted rollouts satisfy the three constraints. Increasing `rho` from `0.915` to `0.933` raises mean cost from `8.170` to `8.721` and intervention from `77.2%` to `91.1%`: with the target radius fixed, slower contraction also reduces the disturbance allowance near the origin.
+
 ## Run it
 
 From a checkout with Python 3.11 or later:
@@ -51,6 +53,7 @@ From a checkout with Python 3.11 or later:
 python -m pip install -e .
 safecontrol verify --root .
 safecontrol reproduce --root . --semantic-check
+safecontrol rho-sweep --root . --check
 ```
 
 The last command regenerates outputs in a temporary directory and compares them with the committed results. CI uses a `1e-6` numerical tolerance across Linux and Windows; the designated Windows/Python 3.12/NumPy 2.3.5 job also checks exact bytes. Use `safecontrol reproduce --root .` to replace the generated outputs intentionally.

@@ -34,6 +34,9 @@ def _parser() -> argparse.ArgumentParser:
         "verify", help="verify hashes, bindings, benchmark gates, and certificate"
     )
     verify_parser.add_argument("--root", default=".")
+    sweep_parser = subparsers.add_parser("rho-sweep", help="run the fixed-radius contraction study")
+    sweep_parser.add_argument("--root", default=".")
+    sweep_parser.add_argument("--check", action="store_true")
     return parser
 
 
@@ -50,6 +53,9 @@ def main(argv: Sequence[str] | None = None) -> int:
                 result = check_semantic_reproduction(root)
             else:
                 result = reproduce(root)
+        elif args.command == "rho-sweep":
+            from .rho_sweep import check_sweep, run_sweep
+            result = check_sweep(root) if args.check else run_sweep(root)
         else:
             config = load_config(root / "config" / "benchmark.json")
             result = verify_repository(root, config)

@@ -1,0 +1,133 @@
+{
+  "generated_by": "safecontrol rho-sweep",
+  "results": [
+    {
+      "bytes": 9483,
+      "path": "summary.json",
+      "sha256": "e5b27ebfc3763678ddf8cd1cbe0adeca9a38bd52d5670dfa39ea4d9398b6d795"
+    },
+    {
+      "bytes": 22928,
+      "path": "runs.csv",
+      "sha256": "4e5008d1208a67787c7c270e5671004eafe37ed42f9a8e6d6c6ef1435d4d0a68"
+    },
+    {
+      "bytes": 57847,
+      "path": "interval_widths.csv",
+      "sha256": "dda55d77db980340e91c8b377f22d8af186ad1d8ca6c14c8b43fcf61af0d12d3"
+    }
+  ],
+  "schema_version": 1,
+  "sources": [
+    {
+      "bytes": 1340,
+      "path": ".github/workflows/ci.yml",
+      "sha256": "fcb15cba0698848913e182a98e2c1115b92efcf10e3607cf92eeb4b11e737a77"
+    },
+    {
+      "bytes": 810,
+      "path": "artifacts/neural_policy.json",
+      "sha256": "72088a4ad71f50b78a36a949d4dfedfba2ef8614811648230a0488f5a5e2262a"
+    },
+    {
+      "bytes": 993,
+      "path": "config/benchmark.json",
+      "sha256": "e9e47ac614e353e914fe12eed380b79f5455d8e8ce5df2aefc1c86ad04dabfbb"
+    },
+    {
+      "bytes": 136,
+      "path": "config/rho_sweep.json",
+      "sha256": "2409351d6f9e5cbdb3a793349e3874b9497bbb727791b35a4e1719f61c36e3dd"
+    },
+    {
+      "bytes": 565,
+      "path": "pyproject.toml",
+      "sha256": "61825ad62a0c8a2a2aa0dc7c25a3e4f86ecad52d8b3e5b188f2d985615e8bcbd"
+    },
+    {
+      "bytes": 92,
+      "path": "src/safecontrol/__init__.py",
+      "sha256": "df7b64bb2f179968400b39480715fc9dfd786838137f9e78a3ab54aa85bf45b0"
+    },
+    {
+      "bytes": 49,
+      "path": "src/safecontrol/__main__.py",
+      "sha256": "0f7d54f3fbb1f79a85eb8110f11793db99da6f3c61ee979de5abe9a1b5f3fdb3"
+    },
+    {
+      "bytes": 9343,
+      "path": "src/safecontrol/certificate.py",
+      "sha256": "e0afbda5fe5b50bcae52557ed3d56c73a372358b517e6fd9816167b38d8149d3"
+    },
+    {
+      "bytes": 2628,
+      "path": "src/safecontrol/cli.py",
+      "sha256": "a4478da25c8bf639730c96ad69b4a97f1b135de3be211b7078d28534a417fcf4"
+    },
+    {
+      "bytes": 8808,
+      "path": "src/safecontrol/config.py",
+      "sha256": "842d305bc9ddb6aab9c5fe7595bfe4e613c5e7ea0f6251c87ec9ba87e6e40e09"
+    },
+    {
+      "bytes": 2577,
+      "path": "src/safecontrol/controllers.py",
+      "sha256": "7ade62c1e3b72c006a53b9197585cd0c3341d02d76fb490dc96f8e6372695ebf"
+    },
+    {
+      "bytes": 3660,
+      "path": "src/safecontrol/counterexamples.py",
+      "sha256": "f62f5d1d9823b2d2b04d755bfeab17dc17b6bb578607bf267531135f365f283f"
+    },
+    {
+      "bytes": 9270,
+      "path": "src/safecontrol/evaluation.py",
+      "sha256": "0a86fe77ee09497b28ea90ef0299a337c27fb0919e30083fa901ad1e6c67fefa"
+    },
+    {
+      "bytes": 1752,
+      "path": "src/safecontrol/model.py",
+      "sha256": "5a94c9f96b49dd256c4ae7ee23a13b7165eefcc5b7d6368d0f8e6c277fe430da"
+    },
+    {
+      "bytes": 9762,
+      "path": "src/safecontrol/pipeline.py",
+      "sha256": "845b22aeb93b866da31f81af16cd575ce66b9e16f76b820662e16ab8063ee337"
+    },
+    {
+      "bytes": 4594,
+      "path": "src/safecontrol/policy.py",
+      "sha256": "1bb66dff2167e546b44ad92d3f40f07efe56008d30132df26138dbf234b8ba3e"
+    },
+    {
+      "bytes": 7612,
+      "path": "src/safecontrol/provenance.py",
+      "sha256": "02cf64a09e0ad55bcbed330ea99d4e848cda02fd6faa37e7ea24e5af05884c8d"
+    },
+    {
+      "bytes": 9062,
+      "path": "src/safecontrol/reporting.py",
+      "sha256": "c8ca520e40f81472eaf58625859f7fea076bc06ef404735016c42a581f3114e2"
+    },
+    {
+      "bytes": 8233,
+      "path": "src/safecontrol/rho_sweep.py",
+      "sha256": "b6da71066264dcb2c88eb6dd0cb9f70741f548997067912008d3c18e6edeba91"
+    },
+    {
+      "bytes": 4730,
+      "path": "src/safecontrol/simulation.py",
+      "sha256": "0c930e3e89304ef31deadceabc30d1ab9099bea0e477b9d05f5f2c9768390f68"
+    },
+    {
+      "bytes": 4573,
+      "path": "src/safecontrol/verification.py",
+      "sha256": "23aba8ff3a5dee0b965d7af0473a9d415176fd843f6da91eb579f154d88ad9c1"
+    },
+    {
+      "bytes": 2580,
+      "path": "tests/test_rho_sweep.py",
+      "sha256": "7415a9909508aba5eec419ee915fdaef8ea2621f13f71ce2d5d7996af43e51e8"
+    }
+  ]
+}

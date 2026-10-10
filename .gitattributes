@@ -9,3 +9,4 @@
 data/generated/** linguist-generated=true
 results/** linguist-generated=true
 artifacts/** linguist-generated=true
+studies/** linguist-generated=true

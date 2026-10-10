@@ -3,6 +3,9 @@ name: reproducibility
 on:
   push:
   pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 1 * * 1'
 
 jobs:
   test-and-reproduce:
@@ -31,5 +34,6 @@ jobs:
       - run: python -B -m unittest discover -s tests -v
       - run: safecontrol verify --root .
       - run: safecontrol reproduce --root . --semantic-check
+      - run: safecontrol rho-sweep --root . --check
       - if: matrix.byte-exact == '1'
         run: safecontrol reproduce --root . --check
